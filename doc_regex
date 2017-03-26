@@ -1,0 +1,65 @@
+Regular expressions (REGEX) en php.
+
+Recherche simple:
+
+- #regex# = syntax basique des regexs avec un '#' au debut et a la fin.
+
+- #regex#i = le 'i' à la fin indique que la recherche ne prends pas en compte les maj. et les min.
+
+- #^regex# = le '^' indique que la mot doit obligatoirement se trouver au début d'une chaine.
+
+- #regex$# = le '$' indique que la mot doit obligatoirement se trouver à la fin d'une chaine.
+
+Le '\' transforme un charactère spécial en charactère normal.
+
+Les classes de caractères:
+
+- #gr[io]s# = entre crochet '[]' indique une classe de caractère, dans l'exemple le regex reconnaitra "gris" et "gros".
+
+- #re[0-9]gex# = le '-' indique un intervalle de classe, dans l'exemple le regex reconnaitra tout les chiffres entre 0 et 9.
+  #re[a-z0-9]gex#
+
+- #re[^a-z]gex# = le '^' dans une classe de caractères signifie le contraire.
+
+Le '\' dans une classe de caractère transforme le '#', ']' ou '-' en caractères normal.
+
+Quantificateurs:
+
+- ? = ce symbole indique que la lettre est facultative. Elle peut y être 0 ou 1 fois.
+  ex: #a?# = reconnait 0 ou 1 'a'.
+
+- + = ce symbole indique que la lettre est obligatoire. Elle peut y être 1 ou plusieurs fois.
+  ex: #a+# = reconnait 'a', "aa", "aaa", ect.
+
+- * = ce symbole indique que la lettre est facultative. Elle peut y être 0, 1 ou plusieurs fois.
+  ex: #a*# = reconnait 0, 1 ou plusieurs 'a'.
+
+(les symbole s'applique à la lettre se trouvant directement devant).
+
+- () = les parenthèses s'utilise pour gerer une string a la place d'une lettre.
+  ex: #mdr(lol)+# = reconnait "lol", "lollol", "lollollol", ect.
+
+Accolades:
+
+Il y a 3 façons d'utiliser les acolades.
+
+- {3} = indique le nombre de lettre qui peuvent se repeter.
+
+- {3, 5} = indique un intervalle de lettre qui peuvent se repeter, dans l'exemple repete la lettre entre 3 et 5 fois.
+
+- {3,} = indique un intervalle de lettre qui se repete du 1er nombre jusqu'à l'infini.
+
+Raccourci (Classe abrégées)
+
+- \d = [0-9].
+- \D = [^0-9].
+- \w = [a-zA-Z0-9].
+- \W = [^a-zA-A0-9].
+- \t = tab.
+- \n = new line.
+- \r = retour chariot.
+- \s = espace.
+- \S = indique ce qui n'est pas un '\s', '\t', '\n' et '\r'.
+- . = indique n'importe quel caractère. (sauf le '\n').
+  Pour faire en sorte que le '.' indique tout, même les entrées, vous devrez utiliser l'option 's'.
+  ex: #[0-9]-.#s 
