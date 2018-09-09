@@ -63,3 +63,5 @@ Raccourci (Classe abrégées)
 - . = indique n'importe quel caractère. (sauf le '\n').
   Pour faire en sorte que le '.' indique tout, même les entrées, vous devrez utiliser l'option 's'.
   ex: #[0-9]-.#s 
+
+test
